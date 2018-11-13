@@ -1,2 +1,9 @@
-<h1>Blog#index</h1>
-<p>Find me in app/views/blog/index.html.erb</p>
+<h1>list of all blogs</h1>
+
+<% @blogs.each do |blog| %>
+  <% user = User.find(blog.user_id) %>
+  <div>Title: <a href="/blogs/<%= blog.id %>"><%= blog.title %></a></div>
+  <div>Author: <a href="/profile/<%= user.id %>"><%= user.fname + " " + user.lname %></a></div>
+  <div>Content: <%= blog.content %></div>
+  <br>
+<% end %>

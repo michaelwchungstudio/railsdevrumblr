@@ -1,0 +1,26 @@
+<h1>this is a user profile</h1>
+
+<div><%= @user.fname + " " + @user.lname%></div>
+<div><%= @user.location %></div>
+<div><%= @user.email %></div>
+<div><%= @user.birthday %></div>
+<br>
+<hr>
+<br>
+
+<h2> list of user's blogs</h2>
+<% @userblogs.each do |blog| %>
+  <div><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></div>
+  <div><%= blog.content %></div>
+  <br>
+<% end %>
+<br>
+<hr>
+<br>
+
+<h2> list of user's comments</h2>
+<% @usercomments.each do |comment| %>
+  <% commentsblog = Blog.find(comment.blog_id) %>
+  <div><a href="/blogs/<%= comment.blog_id %>"><%= commentsblog.title %></a></div>
+  <div><%= comment.content %></div>
+<% end %>
