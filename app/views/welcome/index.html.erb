@@ -1,0 +1,20 @@
+<h1>Welcome to saphire, a blog site whoaaaaaoowwwwwww</h1>
+<br>
+<br>
+<hr>
+<h2>List of Users</h2>
+<% @users.each do |user| %>
+  <div><%= user.id %></div>
+  <div><%= user.email %></div>
+  <br>
+<% end %>
+<br>
+<br>
+<hr>
+<h2>List of blogs</h2>
+<% @blogs.each do |blog| %>
+  <div><a href="/blogs/<%= blog.id %>/"><%= blog.title %></a></div>
+  <div><%= blog.user_id %></div>
+  <div><%= blog.content %></div>
+  <br>
+<% end %>

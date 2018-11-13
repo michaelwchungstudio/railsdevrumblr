@@ -1,0 +1,23 @@
+<h1>Blog#show</h1>
+<p>Find me in app/views/blog/show.html.erb</p>
+
+<hr>
+
+<div> <%= @blog.title %> </div>
+<div> <%= @blog.content %> </div>
+
+<hr>
+<div> Comments under here</div>
+<br>
+<% @comments.each do |comment| %>
+  <div>this is the comment id: <a href="/blogs/<%= comment.blog.id %>/comments/<%= comment.id %>/edit"><%= comment.id %></a></div>
+  <div> <%= comment.content %></div>
+  <br>
+<% end %>
+
+<br>
+<hr>
+<%= form_for [@blog, @blog.comments.build] do |comment| %>
+  <%= comment.text_area :content %>
+  <%= comment.submit %>
+<% end %>

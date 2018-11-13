@@ -1,0 +1,9 @@
+<h1>new blog</h1>
+
+<%= form_for Blog.new do |f| %>
+  <div>Title: <%= f.text_field :title, placeholder: "Add Title" %></div>
+  <br>
+  <div>Content: <%= f.text_area :content, placeholder: "Add Content" %></div>
+  <br>
+  <%= f.submit %>
+<% end %>
