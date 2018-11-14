@@ -18,6 +18,11 @@
 <% @userblogs.each do |blog| %>
   <div><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></div>
   <div><%= blog.content %></div>
+  <% if current_user.id == @user.id %>
+    <form method='get' action='/blogs/<%= blog.id %>/edit'>
+      <button type='submit'>edit/del blog</button>
+    </form>
+  <% end %>
   <br>
 <% end %>
 <br>

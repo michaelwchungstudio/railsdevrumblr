@@ -6,12 +6,24 @@
 <div> <%= @blog.title %> </div>
 <div> <%= @blog.content %> </div>
 
+<% if current_user.id == @blog.user_id %>
+  <form method='get' action='/blogs/<%= @blog.id %>/editfromblog'>
+    <button type='submit'>edit/del blog</button>
+  </form>
+<% end %>
+
 <hr>
 <div> Comments under here</div>
 <br>
 <% @comments.each do |comment| %>
-  <div>this is the comment id: <a href="/blogs/<%= comment.blog.id %>/comments/<%= comment.id %>/edit"><%= comment.id %></a></div>
+  <% commentuser = User.find(comment.user_id) %>
+  <div>this is the comment id: <%= commentuser.fname + " " + commentuser.lname %></div>
   <div> <%= comment.content %></div>
+  <% if current_user.id == comment.user_id %>
+    <form method='get' action='/blogs/<%= comment.blog_id %>/comments/<%= comment.id %>/edit'>
+      <button type='submit'>edit/del comment</button>
+    </form>
+  <% end %>
   <br>
 <% end %>
 

@@ -11,6 +11,19 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:blog_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @blog = Blog.find(params[:blog_id])
+    comment = Comment.find(params[:id])
+    comment.update(comments_params)
+    if comment.save
+      redirect_to "/blogs/#{comment.blog_id}"
+    else
+      render "/comment/#{comment.id}/edit"
+    end
   end
 
   def show

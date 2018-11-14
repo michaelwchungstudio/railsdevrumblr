@@ -1,0 +1,4 @@
+<%= form_for [@blog, @comment] do |comment| %>
+  <%= comment.text_area :content %>
+  <%= comment.submit %>
+<% end %>

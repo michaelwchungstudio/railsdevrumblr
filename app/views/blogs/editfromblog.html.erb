@@ -1,6 +1,6 @@
-<h1>Blog#edit</h1>
+<h1>Blog eDITED FROM BLOGPAGE #edit</h1>
 
-<%= form_for @blog do |f| %>
+<%= form_for @blog, :url => {:action => "updatefromblog"} do |f| %>
   <div>Title: <%= f.text_field :title, placeholder: "Add Title" %></div>
   <br>
   <div>Content: <%= f.text_area :content, placeholder: "Add Content" %></div>
