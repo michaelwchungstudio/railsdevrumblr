@@ -5,6 +5,12 @@
 <div><%= @user.email %></div>
 <div><%= @user.birthday %></div>
 <br>
+<% if current_user.id == @user.id %>
+  <form method='get' action='/users/edit'>
+    <button type='submit'>edit profile info</button>
+  </form>
+<% end %>
+
 <hr>
 <br>
 
