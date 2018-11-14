@@ -1,0 +1,72 @@
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "ProductSans";
+}
+
+// Custom fonts
+// Din OT
+@font-face {
+  font-family: "DinOT";
+  src: font-url("DINOT.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DinOT";
+  src: font-url("DINOT-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "DinOT";
+  src: font-url("DINOT-Bold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "DinOT";
+  src: font-url("DINOT-Light.otf");
+  font-weight: 300;
+}
+
+// Clarendon
+@font-face {
+  font-family: "Clarendon";
+  src: font-url("ClarendonLTStd-Bold.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Clarendon";
+  src: font-url("ClarendonLTStd.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Clarendon";
+  src: font-url("ClarendonLTStd-Light.otf");
+  font-weight: 300;
+}
+
+// Product Sans
+@font-face {
+  font-family: "ProductSans";
+  src: font-url("ProductSansRegular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ProductSans";
+  src: font-url("ProductSansItalic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ProductSans";
+  src: font-url("ProductSansBold.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
