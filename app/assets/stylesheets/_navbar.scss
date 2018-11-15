@@ -1,7 +1,44 @@
+// Navbar children positioning
 nav {
   display: flex;
+  box-sizing: content-box;
+  background-color: $navy;
 }
 
 nav li {
   list-style-type: none;
+}
+
+// Logotext styling
+.logotext {
+  font-size: 2.25em;
+  font-weight: 500;
+  padding: 0 0;
+  color: $sky;
+}
+
+.logotext:hover {
+  color: $rojo;
+}
+
+// Logotext positioning
+nav li:first-child {
+  display: flex;
+  align-items: center;
+  margin-left: 2.5em;
+  margin-right: auto;
+}
+
+// Navbar links
+nav li a {
+  display: block;
+  font-size: 1.15em;
+  font-weight: 500;
+  padding: 2.5em 2.5em;
+  text-decoration: none;
+  color: $true-white;
+}
+
+nav li:not(:first-child):hover {
+  background-color: $rojo;
 }

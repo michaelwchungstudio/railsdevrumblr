@@ -1,8 +1,17 @@
+// Color variables
+$navy: #3E4E59;
+$sky: #C2E7F2;
+$rojo: #F25652;
+$off-white: #F1F0E2;
+
+$true-white: #F9F9F9;
+
 // Reset
 * {
   margin: 0;
   padding: 0;
   font-family: "ProductSans";
+  font-size: 16px;
 }
 
 // Custom fonts
@@ -67,6 +76,12 @@
 @font-face {
   font-family: "ProductSans";
   src: font-url("ProductSansBold.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "ProductSans";
+  src: font-url("ProductSansBoldItalic.ttf");
   font-weight: 500;
   font-style: italic;
 }

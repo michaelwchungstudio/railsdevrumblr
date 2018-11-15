@@ -10,28 +10,29 @@
   </head>
 
   <body>
-    <nav>
-      <li><a href="/">Saphfire 2.0</a></li>
-      <li><a href="/users">Users</a></li>
-      <li><a href="/blogs">Blogs</a></li>
 
-      <% if user_signed_in? %>
-        <li><a href="/blogs/new">New Blog</a></li>
-        <li><a href="/profile/<%= current_user.id%>">Profile</a></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>
-      <% else %>
-        <li><a href="/users/sign_in">Log In</a></li>
-        <li><a href="/users/sign_up">Sign Up</a></li>
-      <% end %>
-    </nav>
+    <div class='page-wrapper'>
 
-    <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+      <nav>
+        <li><a href="/" class='logotext'>SAPHFIRE 2.0</a></li>
+        <li><a href="/users">Users</a></li>
+        <li><a href="/blogs">Blogs</a></li>
 
-    <%= yield %>
+        <% if user_signed_in? %>
+          <li><a href="/blogs/new">New Blog</a></li>
+          <li><a href="/profile/<%= current_user.id%>">Profile</a></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>
+        <% else %>
+          <li><a href="/users/sign_in">Log In</a></li>
+          <li><a href="/users/sign_up">Sign Up</a></li>
+        <% end %>
+      </nav>
+
+      <div>
+        <%= yield %>
+      </div>
+
+    </div>
+
   </body>
 </html>

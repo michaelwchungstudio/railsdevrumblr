@@ -1,9 +1,12 @@
-<h1>list of all users</h1>
+<h1 class='content-title'>USERS</h1>
 
 <% @users.each do |user| %>
-  <div>Name: <a href="/profile/<%= user.id %>"><%= user.fname + " " + user.lname %></a></div>
-  <div>Location: <%= user.location %></div>
-  <div>E-mail: <%= user.email %></div>
-  <div>Birthday: <%= user.birthday %></div>
-  <br>
+  <div class='profile-listing'>
+    <div class='listing-image'></div>
+    <div class='listing-information'>
+      <div class='listing-name'>Name: <a href="/profile/<%= user.id %>" class='site-link'><%= user.fname + " " + user.lname %></a></div>
+      <div class='listing-location'>Location: <%= user.location %></div>
+      <div class='listing-email'>E-mail: <%= user.email %></div>
+    </div>
+  </div>
 <% end %>

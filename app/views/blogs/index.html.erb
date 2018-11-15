@@ -1,9 +1,10 @@
-<h1>list of all blogs</h1>
+<h1 class='content-title'>BLOGS</h1>
 
 <% @blogs.each do |blog| %>
   <% user = User.find(blog.user_id) %>
-  <div>Title: <a href="/blogs/<%= blog.id %>"><%= blog.title %></a></div>
-  <div>Author: <a href="/profile/<%= user.id %>"><%= user.fname + " " + user.lname %></a></div>
-  <div>Content: <%= blog.content %></div>
-  <br>
+  <div class='blog-listing'>
+    <div class='blog-listing-title'>Title: <a href="/blogs/<%= blog.id %>" class='site-link'><%= blog.title %></a></div>
+    <div class='blog-listing-author'>Author: <a href="/profile/<%= user.id %>" class='site-link'><%= user.fname + " " + user.lname %></a></div>
+    <div class='blog-listing-content'><%= blog.content %></div>
+  </div>
 <% end %>

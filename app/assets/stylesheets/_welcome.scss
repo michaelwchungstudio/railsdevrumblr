@@ -1,3 +1,21 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-content-wrapper {
+  background-image: url("homebanner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-motto {
+  font-size: 10em;
+  color: $true-white;
+  text-shadow: -10px 10px 0px $sky,
+               -20px 20px 0px $rojo,
+               -30px 30px 0px $navy;
+}

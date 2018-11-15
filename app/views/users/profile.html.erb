@@ -1,20 +1,23 @@
-<h1>this is a user profile</h1>
+<h1 class='content-title'><%= @user.fname.upcase + "'S" %> PROFILE</div>
 
-<div><%= @user.fname + " " + @user.lname%></div>
-<div><%= @user.location %></div>
-<div><%= @user.email %></div>
-<div><%= @user.birthday %></div>
-<br>
+<div class='user-profile-information-wrapper'>
+  <div class='user-profile-image'></div>
+  <div class='user-profile-information'>
+    <div class='profile-information-line'>Name: <%= @user.fname + " " + @user.lname%></div>
+    <div class='profile-information-line'>Location: <%= @user.location %></div>
+    <div class='profile-information-line'>E-mail: <%= @user.email %></div>
+    <div class='profile-information-line'>Birthday: <%= @user.birthday %></div>
+  </div>
+</div>
+
 <% if current_user.id == @user.id %>
   <form method='get' action='/users/edit'>
-    <button type='submit'>edit profile info</button>
+    <button type='submit' class='submit-button'>EDIT / DEL</button>
   </form>
 <% end %>
 
-<hr>
-<br>
+<h1 class='content-title'>BLOGS</h1>
 
-<h2> list of user's blogs</h2>
 <% @userblogs.each do |blog| %>
   <div><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></div>
   <div><%= blog.content %></div>
