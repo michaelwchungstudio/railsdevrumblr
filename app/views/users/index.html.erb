@@ -1,12 +1,14 @@
-<h1 class='content-title'>USERS</h1>
+<div class='content-wrapper'>
+  <h1 class='content-title'>USERS</h1>
 
-<% @users.each do |user| %>
-  <div class='profile-listing'>
-    <div class='listing-image'></div>
-    <div class='listing-information'>
-      <div class='listing-name'>Name: <a href="/profile/<%= user.id %>" class='site-link'><%= user.fname + " " + user.lname %></a></div>
-      <div class='listing-location'>Location: <%= user.location %></div>
-      <div class='listing-email'>E-mail: <%= user.email %></div>
+  <% @users.each do |user| %>
+    <div class='profile-listing'>
+      <div class='listing-image'></div>
+      <div class='listing-information'>
+        <div class='listing-name'>Name: <a href="/profile/<%= user.id %>" class='site-link'><%= user.fname + " " + user.lname %></a></div>
+        <div class='listing-location'>Location: <%= user.location %></div>
+        <div class='listing-email'>E-mail: <%= user.email %></div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

@@ -6,10 +6,12 @@
 <div> <%= @blog.title %> </div>
 <div> <%= @blog.content %> </div>
 
-<% if current_user.id == @blog.user_id %>
-  <form method='get' action='/blogs/<%= @blog.id %>/editfromblog'>
-    <button type='submit'>edit/del blog</button>
-  </form>
+<% if user_signed_in? %>
+  <% if current_user.id == @blog.user_id %>
+    <form method='get' action='/blogs/<%= @blog.id %>/editfromblog'>
+      <button type='submit'>edit/del blog</button>
+    </form>
+  <% end %>
 <% end %>
 
 <hr>
@@ -19,17 +21,21 @@
   <% commentuser = User.find(comment.user_id) %>
   <div>this is the comment id: <%= commentuser.fname + " " + commentuser.lname %></div>
   <div> <%= comment.content %></div>
-  <% if current_user.id == comment.user_id %>
-    <form method='get' action='/blogs/<%= comment.blog_id %>/comments/<%= comment.id %>/edit'>
-      <button type='submit'>edit/del comment</button>
-    </form>
+  <% if user_signed_in? %>
+    <% if current_user.id == comment.user_id %>
+      <form method='get' action='/blogs/<%= comment.blog_id %>/comments/<%= comment.id %>/edit'>
+        <button type='submit'>edit/del comment</button>
+      </form>
+    <% end %>
   <% end %>
   <br>
 <% end %>
 
 <br>
 <hr>
-<%= form_for [@blog, @blog.comments.build] do |comment| %>
-  <%= comment.text_area :content %>
-  <%= comment.submit %>
+<% if user_signed_in? %>
+  <%= form_for [@blog, @blog.comments.build] do |comment| %>
+    <%= comment.text_area :content %>
+    <%= comment.submit %>
+  <% end %>
 <% end %>

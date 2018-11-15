@@ -7,6 +7,11 @@
   letter-spacing: 0.75px;
 }
 
+// Wrapper for content on each page
+.content-wrapper {
+  padding-bottom: 5rem;
+}
+
 // Page content title
 .content-title {
   font-size: 2rem;
@@ -30,9 +35,12 @@
 .submit-button {
   display: block;
   margin: 0 auto;
-  padding: 0.6rem 1.75rem;
+  padding: 0.7rem 1.75rem;
+  line-height: 1.5rem;
   background-color: $navy;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
   cursor: pointer;
   color: $sky;
 }
