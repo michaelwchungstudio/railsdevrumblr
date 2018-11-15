@@ -1,49 +1,36 @@
-<h1 class='content-title'>SIGN UP</h1>
+<div class='content-wrapper'>
+  <h1 class='content-title'>SIGN UP</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class='user-form-wrapper'>
 
-  <div class="field">
-    <%= f.label :fname %><br />
-    <%= f.text_field :fname, autofocus: true, autocomplete: "first name" %>
-  </div>
+      <%= f.label :email, "E-mail", :class => "form-title" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-text-field" %>
+      <br>
+      <%= f.label :fname, "First Name", :class => "form-title" %>
+      <%= f.text_field :fname, autofocus: true, autocomplete: "first name", :class => "form-text-field" %>
+      <br>
+      <%= f.label :lname, "Last Name", :class => "form-title" %>
+      <%= f.text_field :lname, autofocus: true, autocomplete: "last name", :class => "form-text-field" %>
+      <br>
+      <%= f.label :location, :class => "form-title" %>
+      <%= f.text_field :location, autofocus: true, autocomplete: "location", :class => "form-text-field" %>
+        <br>
+      <%= f.label :birthday, :class => "form-title" %>
+      <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday", :class => "form-text-field" %>
+      <br>
+      <%= f.label :password, "Password (6 char. min.)", :class => "form-title" %>
+      <%= f.password_field :password, autocomplete: "new-password", :class => "form-text-field" %>
+      <br>
+      <%= f.label :password_confirmation, :class => "form-title" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-text-field" %>
 
-  <div class="field">
-    <%= f.label :lname %><br />
-    <%= f.text_field :lname, autofocus: true, autocomplete: "last name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location, autofocus: true, autocomplete: "location" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "SIGN UP", :class => "submit-button" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <% end %>
+</div>
