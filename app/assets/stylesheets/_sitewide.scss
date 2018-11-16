@@ -14,7 +14,7 @@
 
 // Page content title
 .content-title {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin: 5rem 0 3.75rem;
   text-align: center;
   color: $navy;
@@ -57,6 +57,21 @@
   margin: 0 auto;
   width: 40rem;
   padding: 2.5rem 2.5rem;
+}
+
+// Devise alerts (ex. if e-mail already exists as user, password is too short, password doesn't match confirmation, etc.)
+.devise-error-messages {
+  text-align: center;
+  line-height: 2.25em;
+  margin-bottom: 2.5rem;
+}
+
+#error_explanation h2 {
+  color: $rojo;
+}
+
+#error_explanation ul li {
+  line-height: 1.5em;
 }
 
 // Form styling
