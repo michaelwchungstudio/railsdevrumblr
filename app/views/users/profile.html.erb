@@ -22,7 +22,7 @@
   <h1 class='content-title'>BLOGS</h1>
 
   <% @userblogs.each do |blog| %>
-    <div class='blog-listing'>
+    <div class='blog-listing' style='grid-template-rows: 1.5rem 1fr;'>
       <div class='blog-listing-title'>Title: <a href="/blogs/<%= blog.id %>" class='site-link'><%= blog.title %></a></div>
       <div class='blog-listing-content'><%= blog.content %></div>
     </div>
@@ -39,7 +39,7 @@
 
   <% @usercomments.each do |comment| %>
     <% commentsblog = Blog.find(comment.blog_id) %>
-    <div class='blog-listing'>
+    <div class='blog-listing' style='width: 42.5rem'>
       <div class='blog-listing-title'>Blog: <a href="/blogs/<%= comment.blog_id %>" class='site-link'><%= commentsblog.title %></a></div>
       <div class='blog-listing-content'><%= comment.content %></div>
     </div>

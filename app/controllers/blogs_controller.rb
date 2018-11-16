@@ -48,6 +48,12 @@ class BlogsController < ApplicationController
   end
 
   def destroy
+    blog = Blog.find(params[:id])
+    if blog.destroy
+      redirect_to "/profile/#{blog.user_id}"
+    else
+      render "/blogs/#{blog.id}/edit"
+    end
   end
 
   private

@@ -1,41 +1,44 @@
-<h1>Blog#show</h1>
-<p>Find me in app/views/blog/show.html.erb</p>
+<div class='content-wrapper'>
+  <h1 class='content-title'>Blog</h1>
 
-<hr>
+  <div class='blog-listing'>
+    <% user = User.find(@blog.user_id) %>
+    <div class='blog-listing-title'>Title: <%= @blog.title %></div>
+    <div class='blog-listing-author'>Author: <a href="/profile/<%= user.id %>" class='site-link'><%= user.fname + " " + user.lname %></a></div>
+    <div class='blog-listing-content'><%= @blog.content %></div>
+  </div>
 
-<div> <%= @blog.title %> </div>
-<div> <%= @blog.content %> </div>
-
-<% if user_signed_in? %>
-  <% if current_user.id == @blog.user_id %>
-    <form method='get' action='/blogs/<%= @blog.id %>/editfromblog'>
-      <button type='submit'>edit/del blog</button>
-    </form>
-  <% end %>
-<% end %>
-
-<hr>
-<div> Comments under here</div>
-<br>
-<% @comments.each do |comment| %>
-  <% commentuser = User.find(comment.user_id) %>
-  <div>this is the comment id: <%= commentuser.fname + " " + commentuser.lname %></div>
-  <div> <%= comment.content %></div>
   <% if user_signed_in? %>
-    <% if current_user.id == comment.user_id %>
-      <form method='get' action='/blogs/<%= comment.blog_id %>/comments/<%= comment.id %>/edit'>
-        <button type='submit'>edit/del comment</button>
+    <% if current_user.id == @blog.user_id %>
+      <form method='get' action='/blogs/<%= @blog.id %>/editfromblog'>
+        <button type='submit' class='submit-button'>edit/del blog</button>
       </form>
     <% end %>
   <% end %>
-  <br>
-<% end %>
 
-<br>
-<hr>
-<% if user_signed_in? %>
-  <%= form_for [@blog, @blog.comments.build] do |comment| %>
-    <%= comment.text_area :content %>
-    <%= comment.submit %>
+  <h1 class='content-title'>Comments</h1>
+  <% @comments.each do |comment| %>
+    <% commentuser = User.find(comment.user_id) %>
+    <div class='blog-listing' style='width: 42.5rem'>
+      <div class='blog-listing-title'>Author: <a href="/profile/<%= commentuser.id %>" class="site-link"><%= commentuser.fname + " " + commentuser.lname %></a></div>
+      <div class='blog-listing-content'><%= comment.content %></div>
+    </div>
+    <% if user_signed_in? %>
+      <% if current_user.id == comment.user_id %>
+        <form method='get' action='/blogs/<%= comment.blog_id %>/comments/<%= comment.id %>/edit'>
+          <button type='submit' class='submit-button'>EDIT / DEL</button>
+        </form>
+      <% end %>
+    <% end %>
   <% end %>
-<% end %>
+
+  <% if user_signed_in? %>
+    <%= form_for [@blog, @blog.comments.build] do |comment| %>
+      <div class='blog-form-wrapper' style='width: 52.5rem'>
+        <div class='form-title'>Comment:</div>
+        <%= comment.text_area :content, {:class => "form-text-area", style: 'width: 44.5rem; height: 10rem'}%>
+      </div>
+      <%= comment.submit 'SUBMIT', :class => "submit-button" %>
+    <% end %>
+  <% end %>
+</div>

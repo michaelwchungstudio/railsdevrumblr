@@ -1,4 +1,17 @@
-<%= form_for [@blog, @comment] do |comment| %>
-  <%= comment.text_area :content %>
-  <%= comment.submit %>
-<% end %>
+<div class='content-wrapper'>
+  <h1 class='content-title'>EDIT COMMENT</h1>
+  <%= form_for [@blog, @comment] do |comment| %>
+    <div class='blog-form-wrapper' style='width: 52.5rem'>
+      <div class='form-title'>Comment:</div>
+      <%= comment.text_area :content, {:class => "form-text-area", style: 'width: 44.5rem; height: 10rem'} %>
+    </div>
+    <%= comment.submit 'SUBMIT', :class => "submit-button" %>
+  <% end %>
+
+  <h1 class='content-title'>DELETE</h1>
+
+  <%= form_for [@blog, @comment], :url => {:controller => "comments", :action => "destroy"}, html: {method: 'delete'} do |f| %>
+    <%= f.submit 'DELETE', :class => "submit-button" %>
+  <% end %>
+
+</div>

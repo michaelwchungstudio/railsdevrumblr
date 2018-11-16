@@ -26,6 +26,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
+      redirect_to "/blogs/#{comment.blog_id}"
+    else
+      render "/comment/#{comment.id}/edit"
+    end
+  end
+
   def show
   end
 
