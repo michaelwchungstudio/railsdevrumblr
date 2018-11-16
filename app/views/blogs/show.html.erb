@@ -11,7 +11,7 @@
   <% if user_signed_in? %>
     <% if current_user.id == @blog.user_id %>
       <form method='get' action='/blogs/<%= @blog.id %>/editfromblog'>
-        <button type='submit' class='submit-button'>edit/del blog</button>
+        <button type='submit' class='submit-button'>EDIT / DEL</button>
       </form>
     <% end %>
   <% end %>
