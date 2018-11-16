@@ -19,7 +19,7 @@
   <h1 class='content-title'>Comments</h1>
   <% @comments.each do |comment| %>
     <% commentuser = User.find(comment.user_id) %>
-    <div class='blog-listing' style='width: 42.5rem'>
+    <div class='blog-listing' style='width: 42.5rem; grid-template-rows: 1.5rem 1fr'>
       <div class='blog-listing-title'>Author: <a href="/profile/<%= commentuser.id %>" class="site-link"><%= commentuser.fname + " " + commentuser.lname %></a></div>
       <div class='blog-listing-content'><%= comment.content %></div>
     </div>
