@@ -1,24 +1,38 @@
-# README
+![Site Landing]()
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Saphire 2.0
 
-Things you may want to cover:
+Full-stack application that allows users to create, view, and share custom blog posts.
 
-* Ruby version
+## How To Use
 
-* System dependencies
+If cloning the repository:
 
-* Configuration
+1. Open terminal and navigate to the project folder.
+2. Execute 'bundle install' in order to install gems.
+3. Execute 'rails db:migrate' to create the database.
+4. Start the server with 'rails s' command.
+5. Open browser window with correct port (ex. localhost:3000).
 
-* Database creation
+If using the hosted Heroku application:
 
-* Database initialization
+## Future Improvements / Bug Fixes
 
-* How to run the test suite
+TBD.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
+* HTML
+* CSS / SASS
+* Ruby (v)
+* [Devise](https://github.com/plataformatec/devise) gem
 
-* ...
+## Authors
+
+* **Michael Chung**
+
+## Acknowledgments
+
+* Oggi Danailov
+* New York Code & Design Academy
+* StackOverflow
