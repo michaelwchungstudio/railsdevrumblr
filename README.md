@@ -38,7 +38,9 @@ Blog page w/ comments:
 
 ## Future Improvements / Bug Fixes
 
-TBD.
+ - add brief biography field for users, hide more sensitive information (ex. birthday and e-mail). Provide users options to show or hide that information.
+ - more fluid UI/UX design, most notably the buttons to edit/delete information, blogs, or comments (placement below is not ideal and becomes cluttered when there are more blogs and comments)
+ - add limits to showing a certain number of blog posts (provide users the ability to select through pages or possibly even search for specific blog posts by name or date posted)
 
 ## Built With
 
