@@ -4,6 +4,8 @@
 
 Full-stack application that allows users to create, view, and share custom blog posts.
 
+Note: Saphire 1.0 was developed in Sinatra as an introduction to Ruby.
+
 ## How To Use
 
 If cloning the repository:
